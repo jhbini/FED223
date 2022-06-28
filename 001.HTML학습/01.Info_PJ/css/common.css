@@ -3,6 +3,13 @@
 /* 외부css파일은 상단에 반드시 
 인코딩 형식 utf-8 지정필수 */
 
+/* 구글 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+/* 
+    font-family: 'Do Hyeon', sans-serif;
+*/
+
 /* 공통 클래스 */
 /* box center의 의미로 bxc */
 .bxc {

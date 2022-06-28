@@ -7,12 +7,15 @@
     <meta charset="utf-8">
     <!-- meta태그 초기정보 셋업 : 
             charset 문자인코딩형식 지정 -->
-    <!-- 구글웹폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <!-- 구글웹폰트 CSS외부파일 import로 변경 -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet"> -->
+
     <!-- 외부스타일시트 불러오기 : 익스터널방식 -->
     <!-- <link rel="stylesheet" href="./css/common.css"> -->
+    
     <!-- common.css를 직접 부르지말고 sub.css에 import하여 불러온다 -->
     <link rel="stylesheet" href="./css/sub.css">
+
 </head>
 
 <body>
@@ -151,9 +154,9 @@
             -> 주의 : p요소 내부에 다른 블록요소 못씀
         -->
 
-        <hr>
+        <!-- <hr> -->
         <!-- 블록인용구 박스 -->
-        <div class="bqoute">
+        <article class="bqoute">
             <h3>태양계의 발견과 탐험</h3>
             <blockquote cite="https://ko.wikipedia.org/wiki/%ED%83%9C%EC%96%91%EA%B3%84">
                 오랜 시간 동안 인류는 (몇몇 주목할 만한 예외가 있지만) 태양계의 존재를 인식하지 못하였다.
@@ -165,13 +168,13 @@
                 좀 더 최근에는, 망원경 기술이 발달하고 무인 우주선을 사용할 수 있게 됨으로써,
                 다른 행성의 산맥이나 크레이터 등과 같은 지질학적 현상과 구름, 모래폭풍, 만년설 같은 기상학적 현상을 조사할 수 있게 되었다.
             </blockquote>
-        </div>
+        </article>
 
-        <hr><!-- 가로구분선 -->
+        <!-- <hr>가로구분선 -->
         <!-- horizontal line -->
 
         <!-- 주해표시박스 -->
-        <div class="desc">
+        <article class="desc">
             <h3>◈주해:</h3>
             <small>
                 ① 태양계는 항성인 태양과 그 중력에 이끌려 있는 주변 천체가 이루는 체계를 말한다.
@@ -180,9 +183,9 @@
                 대체로 갈색왜성보다는 작지만, 지름이 수천 킬로미터 이상의 천체를 행성이라 부른다.
                 <br><br>
             </small>
-        </div>
-        <hr>
+        </article>
 
+        <!-- <hr> -->
         <!-- 2-5 기자정보 -->
         <div class="rinfo">
             이광식 과학 칼럼니스트 joand999@naver.com
@@ -193,9 +196,9 @@
             <a href="https://n.news.naver.com/mnews/article/081/0003282618?sid=105" target="_blank">기사원문</a>
         </h5>
 
-        <hr>
+        <!-- <hr> -->
         <!-- 오늘의 작품 & 느낌 -->
-        <div class="work">
+        <article class="work">
             <h3>오늘의 작품 &amp; 느낌</h3>
             <figure>
                 <img src="./images/img_the_scream.jpg" alt="뭉크의 절규">
@@ -203,7 +206,7 @@
                     뭉크의 <cite>&lt;절규&gt;</cite>
                 </figcaption>
             </figure>
-        </div>
+        </article>
         <!-- 
             html 특수문자 처리
             & 엔퍼샌드 &amp;
@@ -211,9 +214,9 @@
             > 닫는꺽쇠 &gt;
          -->
 
-        <hr>
+        <!-- <hr> -->
         <!-- IT 돋보기 기사모음 (순서없는리스트) -->
-        <div class="itmag">
+        <article class="itmag">
             <h3>IT 돋보기</h3>
             <ul>
                 <li>
@@ -232,12 +235,12 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </article>
 
-        <hr>
+        <!-- <hr> -->
 
         <!-- 랭킹뉴스  -->
-        <div class="rank">
+        <article class="rank">
             <h3>랭킹뉴스</h3>
             <ol>
                 <li>
@@ -259,7 +262,7 @@
                     </a>
                 </li>
             </ol>
-        </div>
+        </article>
 
         <!-- 
             [ 그룹요소 ]
@@ -285,9 +288,9 @@
 
           -->
 
-        <hr>
+        <!-- <hr> -->
         <!-- 분야별 뉴스 -->
-        <div class="secnews">
+        <article class="secnews">
             <h3>분야별 뉴스</h3>
             <dl>
                 <dt>경제</dt>
@@ -326,7 +329,7 @@
                     </a>
                 </dd>
             </dl>
-        </div>
+        </article>
         <!-- 
             [ 그룹요소 - 용어정의리스트 dl ]
             dl > dt + dd
@@ -345,8 +348,8 @@
 
          -->
 
-        <hr>
-        <div class="pnews">
+        <!-- <hr> -->
+        <article class="pnews">
             <h3>사진뉴스</h3>
             <table>
                 <!-- 첫째줄 -->
@@ -392,7 +395,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </article>
 
         <!-- [ 그룹요소 : 테이블 table ] 
         
