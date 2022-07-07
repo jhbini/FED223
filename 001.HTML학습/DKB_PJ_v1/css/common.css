@@ -8,7 +8,7 @@
 /* body *{
     outline: 2px dashed gray;
 } */
-    /* 외곽선 - 박스요소의 외곽선만 표현
+/* 외곽선 - 박스요소의 외곽선만 표현
         박스 바깥쪽으로 생성됨
     (자신 또는 다른요소에 영향이 없음)
     - 사용법이  border와 유사
@@ -21,115 +21,190 @@
 
 /************************ 1. 상단영역 ************************/
 /* 겉박스 */
-#top{
+#top {
     background-color: #fff;
 }
 
 /* 속박스 */
-.top{
-    position: relative;
-    /* 부모자격 */
+.top {
+    /* position: relative; */
+    /* 부모자격 없앰 - 이유는 
+    서브메뉴 배경 li가상요소가 끝까지 가야해서 */
     /* height: 125px; */
 }
 
 /* 1-1. 메인로고 */
-.logo{
+.logo {
     text-align: center;
     padding: 20px;
 }
-.logo img{
+
+.logo img {
     width: 100px;
 }
 
 /* 1-2. 탑메뉴 */
-.tmenu{
+.tmenu {
+    position: relative;
+    /* 부모자격
+    상태는 로고박스와 GNB박스 사이에 있고
+    자식 ul이 앱솔루트라서 높이값이 0임
+    가로는 자동으로 .inbox의 크기인 1200px을 채움 */
+}
+
+/* 탑메뉴 ul */
+.tmenu>ul {
     position: absolute;
-    top: 30px;
+    top: -50px;
     right: 0;
-    /* 부모는? .top */
+    /* 부모는? .tmenu */
 }
 
 /* 탑메뉴 상위li */
-.tmenu>ul>li{
+.tmenu>ul>li {
     padding: 0 5px;
 }
 
 /* 탑메뉴 상위a요소 */
-.tmenu>ul>li>a{
+.tmenu>ul>li>a {
     /* 글자크기 (15px) */
     font-size: 1.5rem;
 }
 
-/* 1-3. GNB메뉴 */
-.gnb{
-    width: 575px;
-    /* 마영오 - 특정 가로크기가 있어야 적용됨 */
-    margin: 0 auto;
-}
-
-/* GNB 상위 li */
-.gnb>ul>li{
-    padding: 0 15px;
-}
-
-/* GNB 상위 a */
-.gnb>ul>li>a{
-    /* 글자크기 (17px) */
-    font-size: 1.7rem;
-    /* 줄간격 */
-    line-height: 4.4rem;
-}
-/* sns 메뉴 */
-.sns{
+/************************ sns 메뉴 ************************/
+.sns {
     /* 마진탑으로 옆 메뉴글자와 줄맞춤 */
     margin-top: -5px;
 }
 
 /* sns a요소 확장 */
-.sns a{
+.sns a {
     display: block;
     width: 100%;
     height: 100%;
 }
 
 /* sns 메뉴 li */
-.sns li{
+.sns li {
     width: 30px;
     height: 30px;
     /* 배경이미지로 sns아이콘 넣기 */
     background: url(../images/icons.png) no-repeat;
 }
+
 /* 트위터 */
-.sns li:nth-child(1){
+.sns li:nth-child(1) {
     background-position: 0 0;
 }
+
 /* 트위터 오버시 */
-.sns li:nth-child(1):hover{
+.sns li:nth-child(1):hover {
     background-position: 0 -30px;
 }
+
 /* 인스타그램 */
-.sns :nth-child(2){
+.sns :nth-child(2) {
     background-position: -30px 0;
 }
+
 /* 인스타그램 오버시 */
-.sns li:nth-child(2):hover{
+.sns li:nth-child(2):hover {
     background-position: -30px -30px;
 }
+
 /* 페이스북 */
-.sns :nth-child(3){
+.sns :nth-child(3) {
     background-position: -60px 0;
 }
+
 /* 페이스북 오버시 */
-.sns li:nth-child(3):hover{
+.sns li:nth-child(3):hover {
     background-position: -60px -30px;
 }
 
+/*************************** 1-3. GNB메뉴 ***************************/
+.gnb {
+    width: 575px;
+    /* 마영오 - 특정 가로크기가 있어야 적용됨 */
+    margin: 0 auto;
+}
+
+/* GNB 상위 li */
+.gnb>ul>li {
+    padding: 0 15px;
+}
+
+/* GNB 상위 a */
+.gnb>ul>li>a {
+    /* 글자크기 (17px) */
+    font-size: 1.7rem;
+    /* 줄간격 */
+    line-height: 4.4rem;
+}
+
+/* 서브메뉴 */
+.smenu {
+    position: absolute;
+    z-index: 1;
+    /* li가상요소 after보다 위 */
+    background-color: #fff;
+
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+    /* 트랜지션 : 속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* 상위메뉴 li마우스 오버시 서브메뉴 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu {
+    height: 120px;
+}
+
+.gnb>ul>li:nth-child(3):hover .smenu {
+    height: 150px;
+}
+
+.gnb>ul>li:nth-child(4):hover .smenu {
+    height: 90px;
+}
+
+/* 서브메뉴 a */
+.smenu a {
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+}
+
+/* 서브메뉴 끝까지 차는 배경박스 가상요소로 만들기 */
+.gnb>ul>li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* 가로크기를 %로 주면 부모자격에 기준을 둔다
+    -> 화면을 채워야 하므로 싸고있는 요소중에는
+    부모가 없어야 한다. 
+    그래야 화면이 부모가 된다.
+    left를 줬으므로 보이는 화면기준.
+    top은 안줘서 젠틀함 a요소 아래 위치 */
+    
+    height: 0;/* 200px -> 오버시 각 수치로 */
+    background-color: red;
+
+    /* 트랜지션 : 속시이지 */
+    transition: height .4s ease-out;
+}
+
+
 /************************ 2. 메인영역 ************************/
-.cont{
+.cont {
     min-height: 800px;
     /* 최소높이 800px유지-내용넘치면 늘어남 */
 }
+
 /************************ 3. 하단영역 ************************/
-.info{
+.info {
     height: 240px;
 }
