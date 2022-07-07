@@ -18,16 +18,62 @@ body *{
 겉박스를 속박스 크기만큼 자동으로 늘어나게 하여 
 편리한 셋팅을 유도함 */
 
-/* 1. 상단영역 */
-.top{
-    height: 125px;
+/************************ 1. 상단영역 ************************/
+/* 겉박스 */
+#top{
+    background-color: #fff;
 }
-/* 2. 메인영역  */
+/* 속박스 */
+.top{
+    position: relative;
+    /* 부모자격 */
+    /* height: 125px; */
+}
+/* 1-1. 메인로고 */
+.logo{
+    text-align: center;
+    padding: 20px;
+}
+/* 1-2. 탑메뉴 */
+.tmenu{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* 부모는? .top */
+}
+/* 탑메뉴 상위li */
+.tmenu>ul>li{
+    padding: 0 5px;
+}
+/* 탑메뉴 상위a요소 */
+.tmenu>ul>li>a{
+    /* 글자크기 (15px) */
+    font-size: 1.5rem;
+}
+/* 1-3. GNB메뉴 */
+.gnb{
+    width: 575px;
+    /* 마영오 - 특정 가로크기가 있어야 적용됨 */
+    margin: 0 auto;
+}
+/* GNB 상위 li */
+.gnb>ul>li{
+    padding: 0 15px;
+}
+/* GNB 상위 a */
+.gnb>ul>li>a{
+    /* 글자크기 (17px) */
+    font-size: 1.7rem;
+    /* 줄간격 */
+    line-height: 4.4rem;
+}
+
+/************************ 2. 메인영역 ************************/
 .cont{
     min-height: 800px;
     /* 최소높이 800px유지-내용넘치면 늘어남 */
 }
-/* 3. 하단영역  */
+/************************ 3. 하단영역 ************************/
 .info{
     height: 240px;
 }
