@@ -48,12 +48,114 @@ body {
     box-shadow: 0 0 10px 5px cyan;
 }
 
+/************************************************************ 
+
+    [ CSS로 애니메이션 하기 ]
+
+    - 시간에 따라 CSS설정이 변경되어 
+      애니메이션 되도록 키프레임을 설정하고 
+      이것을 호출함으로써 의도된 연출을
+      구현하는 것이 CSS 애니메이션이다.
+
+      [ 애니메이션 키프레임 만들기 ]
+      - 키프레임이란? 애니메이션 장면을 넣는 코드
+
+      1. 두장면 애니메이션
+
+      @keyframes 키프레임 이름{
+        from{시작CSS설정}
+        to{끝나는CSS설정}
+      }
+
+      또는
+
+      @keyframes 키프레임 이름{
+        0%{시작CSS설정}
+        100%{끝나는CSS설정}
+      }
+
+      -> 만약 from(0%) 설정이 초기설정과 같다면
+        from 설정은 생략할 수 있다.
+
+      2. 여러장면 키프레임
+
+      @keyframes 키프레임 이름{
+        0%{CSS설정}
+        10%{CSS설정}
+        20%{CSS설정}
+        ...
+        80%{CSS설정}
+        90%{CSS설정}
+        100%{CSS설정}
+      }
+
+      (1) 장면에 대한 시간계산은 어떻게 하나?
+      -> 전체시간 * 설정된% / 100
+
+      (2) 전체 애니메이션 시간은 언제 셋팅하나?
+      -> 호출시에 셋팅
+
+      [ 설정된 키프레임 호출하는 방법 ]
+
+      animation: 이시이지반방마
+      (이름 시간 이징 지연 반복 방향 마지막상태)
+
+      1. 이름(animation-name) : 키프레임 이름
+      
+      2. 시간(animation-duration) : 애니메이션 동작시간
+        -> 초단위(s)
+
+      3. 이징(animation-timing-function) : easing 가속도
+
+      4. 지연(animation-delay) : 애니메이션 지연시간(s)
+
+      5. 반복(animation-iteration-count) : 애니메이션 반복
+        - 기본값 1, 숫자를 숫자만큼 반복함
+        - 영원히 infinite(인피니트)
+
+      6. 방향(animation-direction) : 시작 -> 끝
+        - 두번이상 반복할 경우 반대경로로 애니메이션 설정
+        - alternate : 시작 -> 끝, 끝 -> 시작
+
+      7. 마지막 상태(animation-fill-mode) : 
+        - 애니메이션이 끝났을때 처음으로 돌아가는게 기본
+        -> forwards (앞쪽에...즉, 애니끝장면으로 마무리)
+        -> 기본값 : backwards(뒤쪽으로, 즉 처음으로)
+        -> 유의사항 : infinite(영원히)일때는 해당사항이 없음
+
+************************************************************/
+
 /************1.상단영역 ************/
 /************1-1. 로고 ************/
 .logo {
     position: fixed;
-    top: 100px;
-    left: 100px;
+
+    /* 정중앙 배치방법1 */
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    /* top, left - 애니대상1,2 */
+
+    /* 
+        -> calc 함수를 사용하여 중앙배치
+        calc(계산식) -> 4칙연산 가능
+        - 주의 : 덧셈, 뺄셈 기호 앞뒤 공백 필수
+        - 원리 : 부모박스의 절만(50%)이동 후
+        중앙에 올 자신의 크기의 절반을 빼서 중앙으로 이동
+    */
+
+    /* 정중앙 배치방법2 */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* 
+    원리:
+    top, left를 부모박스의 절반(50%)만큼 밀고
+    트랜스폼 트랜스레이트로 내크기의 절반만큼 
+    왼쪽, 위쪽으로 이동하면 정중앙이 된다. */
+
+    /* 처음에 2배 크게 설정 - 애니대상3 */
+    transform: scale(2);
+
     width: 200px;
     height: 200px;
     /* 글자변경 */
@@ -68,7 +170,61 @@ body {
     background: pink url(../images/robot_03.png) no-repeat center 10px/160px;
     border-radius: 50%;
     border: 2px solid #ccc;
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation:
+    logoani 1.5s ease-in-out 2s forwards,
+    logoani2 .7s ease-in-out 3.5s infinite alternate;
+    /* animation: logoani 1s ease-in-out 1s 3 alternate forwards; */
 }
+
+/* 로고 애니 키프레임 */
+@keyframes logoani {
+    /* from{} - 최초값이 같으면 생략 */
+    80%{
+        /* 왼쪽위에 위치, 원래크기복원, 회전0 */
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(0deg);
+    }
+    100%{
+        /* 기존값 유지 + 회전20도 */
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(20deg);
+    }
+}/* 키프레임 */
+
+/* 로고 흔들기 애니 키프레임 */
+@keyframes logoani2 {
+    0%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
+}
+
+/* 내용링크, 위로가기버튼, TV를 위한  
+투명도 애니용 클래스 만들기 */
+.opa-ani{
+    opacity: 0;
+    /* 애니메이션 : 이시이지반방마 */
+    animation: opaAni .2s linear 5s 5 alternate forwards;
+}
+/* 지연시간추가 */
+.opa-ani2{
+    animation-delay: 6s;
+}
+.opa-ani3{
+    animation-delay: 7s;
+}
+/* 투명도 애니 키프레임 */
+@keyframes opaAni {
+    to{
+        opacity: 1;
+    }
+} /* 키프레임 */
 
 /************1-2. 내용링크 ************/
 .link{
@@ -131,6 +287,10 @@ body {
 /************2. 메인영역 ************/
 /************2-1. 로봇박스 ************/
 .robx {
+    height: 610px;
+    /* 높이값은 컨텐츠영역의 높이임(패딩불포함)
+    높이값을 준 이유는? 자식요소인 .head의 relative top값을
+    %로 이동시킬 경우 부모박스의 높이가 정해져야 하므로 설정함 */
     padding-top: 200px;
     padding-bottom: 400px;
 }
@@ -149,12 +309,26 @@ body {
 .head {
     position: relative;
     /* 부모자격 */
+    /* top은 애니메이션 변경대상 */
+    top: -100%;
+    /* 위쪽방향으로 부모박스 높이값의 100%만큼 이동 */
     width: 250px;
     height: 250px;
     /* 마영오 - 블록가로중앙 */
     margin: 0 auto;
     /* 둥근모서리 : 왼위 오른위 오른아래 왼아래 */
     border-radius: 50px 50px 0 0;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: headani 1s ease-out 4s forwards;
+}
+
+/* 헤드애니 키프레임 */
+@keyframes headani {
+    to{
+        top: 0;
+    }
+    /* 키프레임 */
 }
 
 /* 눈공통 */
@@ -203,7 +377,16 @@ body {
     width: 89px;
     height: 49px;
     background-image: url(../images/mouth.png);
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: mouthAni .2s linear 7s infinite alternate;
 }
+/* 입애니 키프레임 */
+@keyframes mouthAni {
+    to{
+        transform: scaleY(.5);
+    }
+}/* 키프레임 */
 
 /* 귀공통 */
 .ear {
@@ -228,11 +411,27 @@ body {
 .body {
     position: relative;
     /* 부모자격 */
+    /* left는 애니메이션 변경대상 */
+    left: -100%;
+    /* 완쪽방향으로 부모박스 가로크기의 100%만큼 이동
+    -> 부모박스가 width:auto여도 %값이 적용된 이유는
+    기본 가로를 채우는 크기를 가지고 있기때문임 */
     width: 250px;
     height: 310px;
     /* 마영오 - 블록가로중앙 */
     margin: 0 auto;
     margin-top: 50px;
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: bodyani 1s ease-out 3s forwards;
+}
+
+/* 바디애니 키프레임 */
+@keyframes bodyani {
+    to{
+        left: 0;
+    }
+    /* 키프레임 */
 }
 
 /* 로봇몸에 가상요소로 하단 바 만들기 */
@@ -361,7 +560,32 @@ body {
 /* 오른팔 */
 .a2 {
     right: -60px;
+    /* 트랜스폼 회전기준 */
+    transform: rotate(0deg);
+    /* 회전축 변경 : 가로중앙 세로20px 위치 */
+    transform-origin: center 20px;
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: 
+    /* 애니1 - 팔들기 */
+    a2Ani .6s ease-in-out 7s forwards,
+    /* 애니2 - 팔흔들기 */
+    a2Ani2 .3s ease-in-out 8.6s infinite alternate;
 }
+
+/* 오른팔 들기 키프레임 */
+@keyframes a2Ani {
+    to{
+        transform: rotate(-158deg);
+    }
+}/* 키프레임 */
+
+/* 오른팔 흔들기 키프레임 */
+@keyframes a2Ani2 {
+    to{
+        transform: rotate(-128deg);
+    }
+}/* 키프레임 */
 
 /* 다리공통 */
 /* !important없이 우선순위 높이는 방법은 부모를 써준다 */
