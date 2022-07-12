@@ -5,6 +5,10 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+body *{
+    color: #fff;
+}
+
 body{
     background: url(images/main.jpg) no-repeat fixed center/cover ;
 }
@@ -18,5 +22,10 @@ body{
 }
 /* 1-2. 탑메뉴 */
 .tmenu{
-    
+    position: relative;
+}
+.tmenu>ul{
+    position: absolute;
+    top: -50px;
+    right: 0;
 }
