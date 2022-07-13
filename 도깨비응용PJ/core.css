@@ -10,3 +10,11 @@ html{
     min-width: 1200px;
     margin: 0 auto;
 }
+
+/* IR(Image Replacement) 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

@@ -33,4 +33,16 @@ body *{
     right: 0;
 }
 
-.tmenu>ul>li
+.tmenu>ul>li{
+    padding: 0 5px;
+}
+/* 탑메뉴 상위a요소 */
+.tmenu>ul>li>a{
+    font-size: 1.5rem;
+}
+/* sns메뉴 */
+.sns li:first-of-type {
+    width: 30px;
+    height: 30px;
+    background: url(images/ico_twitter.png) no-repeat center/cover;
+}
