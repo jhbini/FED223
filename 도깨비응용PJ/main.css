@@ -20,27 +20,47 @@ body{
 }
 /* 멤버박스 */
 .mbx{
+    width: 43vh;
+    margin: 0 auto;
+}
+.mbx::after{
+    content: '';
+    display: block;
+    clear:both;
+}
+
+/* .mbx{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     height: 300px;
     margin: 0 auto;
 }
-/* 멤버 개별박스 공통 */
 .mb{
     width: 24%;
     margin: 1%;
     height: 100px;
     padding-bottom: 10px;
+} */
+
+/* 멤버 개별박스 공통 */
+.mb{
+    position: relative;
+    width: 50%;
+    margin: 0;
+    float: left;
 }
 
 /* 멤버 이미지 박스 */
-.mi{
-    transition: .5s ease;
+.mi,.mi2{
+    transition: .5s ease-in-out;
 }
 
 .mb:hover .mi{
-    margin-left: -53%;
+    margin-left: 53%;
+}
+.mb:hover .mi2{
+    margin-left: 53%;
 }
 
 /* 멤버 이미지 
@@ -66,8 +86,45 @@ body{
     /* 트랜지션 : 속성 시간 이징 지연 */
     transition: height 0.4s ease-out;
 }
-/* .cat 개별박스에 오버시 .cd보이기 */
-.mbx:hover .cbx{
+/* .mbx 개별박스에 오버시 .cbx보이기 */
+.mb:hover .cbx{
     height: 216px;
-    
 }
+
+/* 캐릭터 설명 타이틀 */
+.cbx h3{
+    /* font-family: 'East Sea Dokdo', cursive; */
+    font-size: min(2.7vw,30px);
+    /* 최대글자크기 30px, 이하는 유동적 */
+    font-weight: normal;
+    padding: 15px 10px 5px;
+
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+    letter-spacing: -1px;
+    color: #000;
+}
+
+/* 캐릭터 설명문단 */
+.cbx p{
+    /* font-family: 'Yeon Sung','ZCOOL KuaiLe',cursive; */
+    font-size: min(1.1vw,16px);
+    /* 최대글자크기 16px 이하는 유동적 */
+    line-height: 1.7;
+    padding: 10px;
+    text-align: justify;
+    color: #000;
+}
+
+/* 캐릭터 설명 첫번째 p요소의 첫번째 글자
+가상요소로 변경하기 */
+.cbx p:first-of-type::first-letter{
+    font-size: 30px;
+    color: cyan;
+    /* 글자그림자로 테두리 만들기
+    그림자 4개를 각방향으로 1px밀기 */
+    text-shadow: 
+    1px 0 #000,-1px 0 #000,
+    0 1px #000,0 -1px #000;
+}
+
