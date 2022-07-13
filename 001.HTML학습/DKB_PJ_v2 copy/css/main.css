@@ -84,7 +84,7 @@ body{
     transition: .4s ease-in-out;
 }
 
-/* .car에 오버시 .ci변경 */
+/* .cat에 오버시 .ci변경 */
 .cat:hover .ci{
     margin-top: -53%;
 }
