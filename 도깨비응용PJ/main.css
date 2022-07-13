@@ -20,6 +20,7 @@ body{
 }
 /* 멤버박스 */
 .mbx{
+    position: relative;
     width: 43vh;
     margin: 0 auto;
 }
@@ -43,13 +44,16 @@ body{
     padding-bottom: 10px;
 } */
 
-/* 멤버 개별박스 공통 */
+/* 멤버 이미지 개별박스 공통 */
 .mb{
-    position: relative;
     width: 50%;
     margin: 0;
     float: left;
 }
+
+/* .mi,.mi2{
+    position: relative;
+} */
 
 /* 멤버 이미지 박스 */
 .mi,.mi2{
@@ -57,10 +61,10 @@ body{
 }
 
 .mb:hover .mi{
-    margin-left: 53%;
+    margin-left: 99%;
 }
 .mb:hover .mi2{
-    margin-left: 53%;
+    margin-left: -99%;
 }
 
 /* 멤버 이미지 
