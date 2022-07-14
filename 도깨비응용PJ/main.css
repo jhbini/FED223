@@ -15,14 +15,15 @@ body{
 
 /* 메인 */
 .cont{
-    padding-top: 400px;
+    padding-top: 200px;
     box-sizing: border-box;
 }
 /* 멤버박스 */
 .mbx{
     /* display: flex; */
-    width: 90%;
+    width: 50%;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 .mbx::after{
     content: '';
@@ -34,9 +35,8 @@ body{
 .mb{
     position: relative;
     /* 부모 - .cbx */
-    width: 15%;
-    margin: 0 5%;
-    float: left;
+    width: 49%;
+    margin: 0 .5%;
 }
 
 /* .mi,.mi2{

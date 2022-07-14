@@ -6,7 +6,7 @@
 /* 공사중 표시
     별표(*)는 모든요소 선택 */
 body *{
-    outline: 1px dashed rgb(247, 52, 208);
+    outline: 1px dashed rgb(254, 253, 254);
 }
 
 /*  상단영역 */
@@ -48,10 +48,11 @@ body *{
     height: 100%;
 }
 
-    /* 플렉스박스 */
+    /******************* 플렉스박스 *******************/
 .fbx{
     display: flex;
 }
+/**********************************************************/
 
 .jcc{
     /* 수평방향 중앙정렬 */
@@ -73,8 +74,6 @@ body *{
     
 }
 
-
-
 /* 트위터 */
 .sns li:nth-child(1) {
     background: url(images/ico_twitter.png) no-repeat center/cover;
@@ -87,3 +86,55 @@ body *{
 .sns li:nth-child(3) {
     background: url(images/ico_youtube.png) no-repeat center/cover;
 }
+
+/**************** GNB메뉴 ****************/
+.gnb>ul>li{
+    padding: 0 20px;
+}
+.gnb>ul>li>a{
+    display: block;
+    font-size: 2rem;
+    line-height: 4rem;
+    /* text-align: center; */
+    border-bottom: 4px solid transparent;
+}
+.gnb>ul>li:hover>a{
+    border-bottom: 4px solid #f3a6ba;
+}
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+}
+
+
+/* 서브메뉴 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu{
+    height: 78px;
+}
+.gnb>ul>li:nth-child(2):hover .smenu{
+    height: 52px;
+}
+.gnb>ul>li:nth-child(5):hover .smenu{
+    height: 52px;
+}
+
+.smenu a{
+    display: block;
+    font-size: 1.5rem;
+    padding: 3px 0;
+}
+
+/* 하단영역 */
+#info{
+    background-color: rgba(21, 20, 20, 0.704);
+}
+
+.info {
+    position: relative;
+    min-height: 20px;
+}
+
