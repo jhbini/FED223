@@ -3,15 +3,14 @@
 /* 공통/반복 css
 상단 / 하단영역 반복 디자인 */
 
-/* 공사중 표시
-    별표(*)는 모든요소 선택 */
-body *{
+/* 공사표시 */
+/* body *{
     outline: 1px dashed rgb(254, 253, 254);
-}
+} */
 
 /*  상단영역 */
 #top{
-    border-bottom: 1px solid rgb(75, 75, 75);
+    border-bottom: 2px solid #f3a6ba;
     background-color: #000;
 }
 
@@ -27,6 +26,7 @@ body *{
 .tmenu{
     position: relative;
 }
+
 .tmenu>ul{
     position: absolute;
     top: -50px;
@@ -52,25 +52,28 @@ body *{
 .fbx{
     display: flex;
 }
-/**********************************************************/
 
 .jcc{
     /* 수평방향 중앙정렬 */
     justify-content: center;
 }
 
+/**********************************************************/
+
 /* 탑메뉴 상위a요소 */
 .tmenu>ul>li>a {
-    /* 글자크기 (15px) */
     font-size: 1.5rem;
 }
 
-
-
 /* sns메뉴 */
+.sns{
+    margin-top: -5px;
+}
+
 .sns li{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
     
 }
 
@@ -89,24 +92,25 @@ body *{
 
 /**************** GNB메뉴 ****************/
 .gnb>ul>li{
-    padding: 0 20px;
+    width: 150px;
+    text-align: center;
 }
 .gnb>ul>li>a{
     display: block;
     font-size: 2rem;
     line-height: 4rem;
-    /* text-align: center; */
     border-bottom: 4px solid transparent;
 }
-.gnb>ul>li:hover>a{
-    border-bottom: 4px solid #f3a6ba;
-}
+
 /* 서브메뉴 */
 .smenu{
     position: absolute;
+    width: 150px;
     z-index: 1;
     height: 0;
     overflow: hidden;
+    background-color: #f3a6ba;
+    border-radius: 0 0 7px 7px;
     transition: height .2s ease-in-out;
 }
 
@@ -125,7 +129,16 @@ body *{
 .smenu a{
     display: block;
     font-size: 1.5rem;
-    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* 메인 */
+.cont {
+    min-height: 800px;
 }
 
 /* 하단영역 */
@@ -137,5 +150,36 @@ body *{
     position: relative;
     min-height: 20px;
 }
+/* 3-1 하단링크 */
+.blink {
+    padding-top: 10px;
+} 
+.blink li {
+    padding:0 20px;
+} 
 
-.info 
+.blink a{
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+.blink a:hover{
+    color: #f3a6ba;
+    text-decoration: overline;
+}
+
+/* 3-2 저작권정보 */
+.cp{
+    padding: 5px;
+}
+.cp p{
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* 3-3 하단로고 */
+.blogo{
+    text-align: center;
+}
+/* 3-4 바로가기 */
