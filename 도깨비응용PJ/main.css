@@ -54,7 +54,7 @@ body{
     width: 100%;
 }
 
-/* 이름박스 */
+/* 멤버 이름박스 */
 .nbx{
     position: absolute;
     text-align: right;
@@ -68,25 +68,23 @@ body{
 /* 멤버 설명박스 */
 .cbx{
     position: absolute;
+    display: none;
     height: 100%;
-    width: 0;
     overflow: auto;
     background-color: rgba(255, 255, 255, 0.7);
-    transition: width .4s ease-out;
     transform:translateY(-100%);
 }
 
 .mb:hover .cbx{
-    width: 100%;
+    display: block;
 }
 
 
 /* 멤버 설명 타이틀 */
 .cbx h3{
-    /* font-family: 'East Sea Dokdo', cursive; */
     text-align: center;
     font-size: min(2.7vw,25px);
-    font-weight: normal;
+    font-weight: bold;
     padding: 15px 10px 5px;
     white-space: nowrap;
     letter-spacing: -1px;
@@ -96,7 +94,6 @@ body{
 
 /* 멤버 설명문단 */
 .cbx p{
-    /* font-family: 'Yeon Sung','ZCOOL KuaiLe',cursive; */
     font-size: min(1.1vw,16px);
     line-height: 1.5;
     padding: 10px;
@@ -106,6 +103,8 @@ body{
 
 .cbx p:first-of-type::first-letter{
     font-size: 20px;
-    text-decoration: underline #f786a4;;
+    font-weight: bold;
 }
+
+
 
