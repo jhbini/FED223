@@ -5,9 +5,6 @@
 @import url(./core.css);
 @import url(./reset.css);
 
-body *{
-    color: #fff;
-}
 
 body{
     background: url(images/main.jpg) no-repeat fixed top/cover ;
@@ -15,11 +12,12 @@ body{
 
 /* 메인 */
 .cont{
-    padding-top: 250px;
+    padding-top: 200px;
     box-sizing: border-box;
 }
 /* 멤버박스 */
 .mbx{
+    display: flex;
     flex-wrap: wrap;
     width: 50%;
     margin: 0 auto;
@@ -45,9 +43,11 @@ body{
 }
 .mb:hover .mi{
     transform:translateX(100%);
+    text-shadow: 3px 4px 4px #f786a4;
 }
 .mb:hover .mi2{
     transform:translateX(-100%);
+    text-shadow: 3px 4px 4px #f786a4;
 }
 
 .mi>img,.mi2>img{
@@ -56,19 +56,18 @@ body{
 
 /* 이름박스 */
 .nbx{
-    /* display: block; */
     position: absolute;
     text-align: right;
+    color: #000;
     bottom: 5%;
     font-size: 2.5rem;
+    font-weight: bold;
     width: 97%;
-    text-shadow: 3px 5px 5px #000;
 }
 
 /* 멤버 설명박스 */
 .cbx{
     position: absolute;
-    /* display: none; */
     height: 100%;
     width: 0;
     overflow: auto;
@@ -76,29 +75,26 @@ body{
     transition: width .4s ease-out;
     transform:translateY(-100%);
 }
-/* .mbx 개별박스에 오버시 .cbx보이기 */
+
 .mb:hover .cbx{
-    /* display: block; */
     width: 100%;
 }
 
 
-/* 캐릭터 설명 타이틀 */
+/* 멤버 설명 타이틀 */
 .cbx h3{
     /* font-family: 'East Sea Dokdo', cursive; */
     text-align: center;
-    font-size: min(2.7vw,30px);
-    /* 최대글자크기 30px, 이하는 유동적 */
+    font-size: min(2.7vw,25px);
     font-weight: normal;
     padding: 15px 10px 5px;
-
-    /* 줄바꿈 방지 */
     white-space: nowrap;
     letter-spacing: -1px;
     color: #000;
+    text-decoration: underline #f786a4 solid;
 }
 
-/* 캐릭터 설명문단 */
+/* 멤버 설명문단 */
 .cbx p{
     /* font-family: 'Yeon Sung','ZCOOL KuaiLe',cursive; */
     font-size: min(1.1vw,16px);
@@ -110,9 +106,6 @@ body{
 
 .cbx p:first-of-type::first-letter{
     font-size: 20px;
-    color: rgb(255, 0, 195);
-    text-shadow: 
-    1px 0 #000,-1px 0 #000,
-    0 1px #000,0 -1px #000;
+    text-decoration: underline #f786a4;;
 }
 

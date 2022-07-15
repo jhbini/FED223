@@ -62,6 +62,7 @@
 
 /* 탑메뉴 상위a요소 */
 .tmenu>ul>li>a {
+    color: #fff;
     font-size: 1.5rem;
 }
 
@@ -71,23 +72,23 @@
 }
 
 .sns li{
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin: 2px;
     
 }
 
 /* 트위터 */
 .sns li:nth-child(1) {
-    background: url(images/ico_twitter.png) no-repeat center/cover;
+    background: url(images/twitter.png) no-repeat center/cover;
 }
 /* 트위터 */
 .sns li:nth-child(2) {
-    background: url(images/ico_instagram.png) no-repeat center/cover;
+    background: url(images/instagram.png) no-repeat center/cover;
 }
 /* 트위터 */
 .sns li:nth-child(3) {
-    background: url(images/ico_youtube.png) no-repeat center/cover;
+    background: url(images/youtube.png) no-repeat center/cover;
 }
 
 /**************** GNB메뉴 ****************/
@@ -97,6 +98,7 @@
 }
 .gnb>ul>li>a{
     display: block;
+    color: #fff;
     font-size: 2rem;
     line-height: 4rem;
     border-bottom: 4px solid transparent;
@@ -111,7 +113,7 @@
     overflow: hidden;
     background-color: #f3a6ba;
     border-radius: 0 0 7px 7px;
-    transition: height .2s ease-in-out;
+    transition: height .3s ease-in-out;
 }
 
 
@@ -129,8 +131,6 @@
 .smenu a{
     display: block;
     font-size: 1.5rem;
-    width: 100%;
-    height: 100%;
     line-height: 25px;
     color: #000;
     font-weight: bold;
@@ -148,7 +148,7 @@
 
 .info {
     position: relative;
-    min-height: 20px;
+    min-height: 100px;
 }
 /* 3-1 하단링크 */
 .blink {
@@ -170,6 +170,7 @@
 
 /* 3-2 저작권정보 */
 .cp{
+    color: #fff;
     padding: 5px;
 }
 .cp p{
