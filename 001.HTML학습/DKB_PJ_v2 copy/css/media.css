@@ -66,12 +66,12 @@
     .cd {
         position: static;
     }
-    
+
     /* 4. 타이틀 글자 */
     .cd h3 {
         font-size: 6vw;
     }
-    
+
     /* 5. 설명문단 */
     .cd p {
         font-size: 4vw;
@@ -85,15 +85,17 @@
     }
 
     /* 7. 사라질 요소들 : .tmenu, .blink */
-    .tmenu, .blink{
+    .tmenu,
+    .blink {
         display: none;
     }
 
     /* 8. 하단영역 */
-    .info{
+    .info {
         min-height: auto;
         padding-bottom: 10px;
     }
+
     /* 9. GNB메뉴 변경 */
     .gnb {
         position: fixed;
@@ -106,35 +108,63 @@
         /* 처음에 안보임 */
         display: none;
     }
-    .gnb ul{
+
+    .gnb ul {
         /* 세로방향 */
         flex-direction: column;
         margin-top: 20vh;
         /* 위에서 20% 보이는 위치로 이동 */
     }
-    .gnb>ul>li>a{
+
+    .gnb>ul>li>a {
         font-size: 5vh;
         line-height: 10vh;
         /* 메뉴6개 - 보이는 화면 높이값의 60% 차지 */
         text-align: center;
         color: #fff;
     }
+
     /* 서브메뉴, 서브배경 모두 없앰 */
-    .smenu, .gnb>ul>li:hover::after {
+    .smenu,
+    .gnb>ul>li:hover::after {
         display: none;
     }
+
     /* 상위메뉴 오버시 밑줄없앰 */
-    .gnb>ul>li:hover>a{
+    .gnb>ul>li:hover>a {
         border-bottom-color: transparent;
     }
+
     /* 10. 햄버거버튼 보이기 */
-    .ham{
+    .ham {
         display: block;
     }
+
     /* 11. GNB메뉴 보이기 */
-    .top.on .gnb{
+    body.on .top .gnb {
         display: block;
     }
+
+    /* 12. 캐릭터박스 GNB메뉴 보일때 아래로 내리기
+    - 트랜스폼 애니메이션으로 위치 위로 올라옴 */
+    body.on .cat {
+        z-index: -1;
+    }
+
+    /* 13. GNB메뉴 보일때 스크롤 없앰 */
+    body.on {
+        overflow: hidden;
+    }
+
+    /* 14. 도깨비 문구 없애기 */
+    .dtxt {
+        display: none;
+    }
+
+    /* 15. 배경이미지 타이틀 없애기 */
+   body{ 
+    background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+}
 }
 
 /******************* 870px 이하 끝 *******************/
