@@ -155,11 +155,12 @@ body::after{
     to{
         transform: translateY(0);
     }
-}
+} /* 키프레임 */
 
 /* 캐릭터 이미지 박스 */
 .ci{
     position: relative;
+    /* 부모자격: .ci span */
     /* 크랜지션: 속시이지 */
     transition: .4s ease-in-out;
 }
