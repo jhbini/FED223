@@ -3,13 +3,13 @@
 /* 공통 class / 웹폰트 */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&family=Nanum+Gothic&display=swap');
-/* 
-    font-family: 'Single Day', cursive;
-    font-family: 'Yeon Sung', cursive;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-    font-family: 'Nanum Gothic', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Yeon+Sung&family=ZCOOL+KuaiLe&family=Nanum+Gothic&display=swap');
+/* font-family: 'East Sea Dokdo', cursive;
+font-family: 'Yeon Sung', cursive;
+font-family: 'ZCOOL KuaiLe', cursive; 
+font-family: 'Nanum Gothic', sans-serif;
 */
+
 /* 폰트 상대단위를 위한 html폰트크기 설정 */
 html{
     font-size: 10px;

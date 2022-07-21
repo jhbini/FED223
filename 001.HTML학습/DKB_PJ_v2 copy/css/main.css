@@ -281,8 +281,8 @@ body::after{
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-   font-family: 'Single Day', cursive;
-   font-size: min(1.9vw,26px);
+   font-family: 'East Sea Dokdo', cursive;
+   font-size: min(2.7vw,30px);
    /* 최대글자크기 26px, 이하는 유동적 */
    font-weight: normal;
    padding: 15px 10px 5px;
@@ -304,7 +304,7 @@ body::after{
 
 /* 캐릭터 설명 문단 */
 .cd p{
-   font-family: 'Yeon Sung', 'ZCOOL QingKe HuangYou';
+   font-family: 'Yeon Sung','ZCOOL KuaiLe',cursive;
    font-size: min(1.1vw,16px);
    /* 최대글자크기 16px, 이하는 유동적 */
    line-height: 1.7;
