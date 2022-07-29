@@ -4,12 +4,14 @@
 
 // startSS()함수를 호출하여 사용
 function startSS() {
-    new SmoothScroll(document, 60, 12)
+    // new SmoothScroll(document, 60, 12)
+    new SmoothScroll(document, 80, 13)
+    // SmoothScroll(전체문서객체, 스크롤이동속도 , 남은스크롤이동애니)
 }
 
 // 전역변수 스크롤 위치값
 let pos;
-// 다른 코딩으로 스크롤 이동시 이 변수에 일치필요!!!
+// ((중요!))다른 코딩으로 스크롤 이동시 이 변수에 일치필요!!!
 
 function SmoothScroll(target, speed, smooth) {
     if (target === document)
