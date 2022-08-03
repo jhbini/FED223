@@ -9,6 +9,58 @@ $(() => {
     /// 부드러운 스크롤 호출!(제이쿼리 아님!)
     startSS();
 
+    /*****************************************************
+       모바일 버튼 클릭시 검색 / GNB 보이기 
+     *****************************************************/
+    // 1. 햄버거 버튼
+    $('.hbtn').click(()=>{
+        // GNB 박스 슬라이딩 보임/숨김
+        // slideToggle() -> slideup/slideDown
+        // 대상: 모바일 GNB
+        $('#mobx').slideToggle(400);
+        // 애니후 높이값 재설정 호출
+        resetH();
+    });
+
+    // 2. 검색버튼
+    $('.sbtn').click(()=>{
+        // GNB 박스 슬라이딩 보임/숨김
+        // slideToggle() -> slideup/slideDown
+        // 대상: 모바일 GNB
+        $('.mos').slideToggle(200);
+        // 애니후 높이값 재설정 호출
+        resetH();
+    }); ////////////// click //////////////
+
+    /* 모바일 GNB 높이값 재설정 함수 */
+    const resetH = () => {
+        // #mobx의 높이값을 동적으로 생성함
+        console.log(
+            '.top의 높이값:',
+            $(".top").height(),
+            ' /.mos의 높이값:',
+            $('.mos').height('delay')
+        );
+
+         // 검색박스 높이는 block일때 넣어줌!
+         let temp = $('.mos').css('display')==='none'?
+         0:$('.mos').innerHeight();
+
+        // 변경할 높이
+        let Hval = $('.top').innerHeight() +
+        $('.mos').css('display')==='none'?
+        0:$('.mos').innerHeight();
+        // innerHeight()는 패딩포함노ㅠ이
+        // height()는 순수높이(컨텐츠만)
+        // 017문서참조
+
+        // 동적으로 변경하기
+        $("#mobx").css({
+    
+        })
+    }; /////////// resetH 함수 ////////////
+
+
     /****************************************************************** 
         페이지 스크롤시 변경 구현하기
         - 이벤트 scroll
@@ -232,9 +284,9 @@ $(() => {
 const keyval = new Map();
 
 // 2. 값셋팅: set(키,값)
-keyval.set('한국배우','조승우');
-keyval.set('미국배우','탐크루즈');
-keyval.set('중국배우','성룡');
+keyval.set('한국배우', '조승우');
+keyval.set('미국배우', '탐크루즈');
+keyval.set('중국배우', '성룡');
 
 // 3. 값호출 : get(키)
 // console.log('Map()값:',
