@@ -120,13 +120,46 @@ $(() => { //////////////// jQB /////////////////////////
         }
 
 
-        // 스크롤 애니메이션 : 페이지 번호만큼 배수로 이동함
+        // 3. 스크롤 애니메이션 : 페이지 번호만큼 배수로 이동함
         $('html,body').animate({
             scrollTop:$(window).height()*pno+"px"
-        },800)
+        }, dur_sc, easing_sc);
+
+        // 4. GNB메뉴 + 사이드 표시자 위치 업데이트하기
+        $(".gnb li").eq(pno).addClass("on")
+        .siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on")
+        .siblings().removeClass("on");
+
+
 
     }); ////////// mousewheel /////////////////////////////
     /////////////////////////////////////////////////////
+
+    // GNb 클릭시 위치이동하기 ///////
+    $(".gnb a").click(function(e){
+        e.preventDefault();
+
+        // 1. 부모 li순번
+        let idx = $(this).parent().index();
+        console.log(idx)
+
+        // 2. 순번을 pno에 일치
+        pno = idx;
+
+        // 2. 페이지이동하기
+        $('html,body').animate({
+            scrollTop:$(window).height()*pno+"px"
+        }, dur_sc, easing_sc);
+
+        // 4. GNB메뉴 + 사이드 표시자 위치 업데이트하기
+        $(".gnb li").eq(pno).addClass("on")
+        .siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on")
+        .siblings().removeClass("on");
+
+
+    }); ////////////// click ///////////////////////////
     
 
 
