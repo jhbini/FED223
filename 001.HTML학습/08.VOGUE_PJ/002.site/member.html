@@ -25,6 +25,8 @@
     <script src="js/smoothScroll20.js"></script>
     
     <script src="js/common.js"></script>
+    <!-- 회원가입 페이지 JS -->
+    <script src="js/member.js"></script>
 
     <!-- 아티클 태그는 독립적인 내용이 들어가는것
     섹션태그 : 연관된 내용이지만 구분시켜줄 때 -->
@@ -145,7 +147,7 @@
             <div class="mwrap">
                 <!-- 입력창박스 -->
                 <div id="search">
-                    <input type="text">
+                    <input type="text" class="search">
                 </div>
                 <!-- 검색버튼 -->
                 <button class="scbtn fi fi-search">
@@ -246,19 +248,18 @@
             </header>
             <!-- 2-2 갤러리 페이지 컨텐츠 박스 -->
             <section class="scont">
-                
                 <form action="process.php" method="post" class="logF">
                     <ul>
                         <!-- 아이디 -->
                         <li>
                             <label for="mid" class="itit">아이디</label>
-                            <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디를 입력해 주세요!">
+                            <input type="text" name="mid" id="mid" maxlength="20" placeholder="영문자로 시작하는 6~20글자 영문자/숫자">
                             <span class="msg"></span>
                         </li>
                         <!-- 비밀번호 -->
                         <li>
                             <label for="mpw" class="itit">비밀번호</label>
-                            <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호를 입력해 주세요!">
+                            <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="특수문자,문자,숫자포함 형태의 5~15자리">
                             <span class="msg"></span>
                         </li>
                         <!-- 비밀번호확인 -->
