@@ -47,7 +47,7 @@ $(() => { //////////////////// jQB ////////////////////////////////////
     /********************************************************* 
                     SNS 메뉴 파트 링크 셋팅하기
      *********************************************************/
-    $(".sns a, .mosns a").click(() => location.href = 'index.html');
+    $(".sns a, .mosns a").click(() => location.href = 'index.php');
     $(".mosns a").eq(3).after('<br>');
 
     // 대상: .sns a요소의$
@@ -79,13 +79,13 @@ $(() => { //////////////////// jQB ////////////////////////////////////
                 url = "https://www.youtube.com/user/VogueKorea?sub_confirmation=1";
                 break;
             case "로그인":
-                url = "login.html";
+                url = "login.php";
                 break;
             case "회원가입":
-                url = "member.html";
+                url = "member.php";
                 break;
             case "갤러리":
-                url = "gallery.html";
+                url = "gallery.php";
                 break;
             case "카카오스토리":
                 url = "https://story.kakao.com/ch/voguekr";
@@ -108,7 +108,7 @@ $(() => { //////////////////// jQB ////////////////////////////////////
                     메인로고 링크 셋팅하기
      *********************************************************/
     $(".logo a").click(() =>
-        location.href = 'index.html');
+        location.href = 'index.php');
     /********************************************************* 
                     GNB 메뉴 파트 링크 셋팅하기
      *********************************************************/
@@ -127,7 +127,7 @@ $(() => { //////////////////// jQB ////////////////////////////////////
 
         // 2. 서브페이지 이동하기
         if (txt !== "search") // 검색이 아니면
-            location.href = 'category.html?cat=' +
+            location.href = 'category.php?cat=' +
             encodeURIComponent(txt);
 
         // 카테고리를 구분하기 위한 파라미터 키=값 쌍을 보냄
